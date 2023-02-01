@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/", // директория билда
+    "noImplicitAny": true, //не позволяет переменные без явного типа
+    "module": "ESNext", // модульная система
+    "target": "es5", // компиляция в ес5
+    "jsx": "react-jsx", // конструкции реакта
+    "allowJs": true, // позволяет компилятору обрабатывать js файлы
+    "moduleResolution": "node", //
+    "esModuleInterop": true, // импорт из пакетов common.js
+    "allowSyntheticDefaultImports": true // использование привычных импортов-экспортов вместо '* as'
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
