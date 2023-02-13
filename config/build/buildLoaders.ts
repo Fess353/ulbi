@@ -3,6 +3,12 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { BuildOptions } from "./types/config";
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
+  const svgLoader = {
+    test: /\.svg$/i,
+    issuer: /\.[jt]sx?$/,
+    use: ["@svgr/webpack"],
+  };
+
   const sassLoader = {
     test: /\.s[ac]ss$/i,
     use: [
@@ -14,7 +20,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
             auto: (resPath: string) => Boolean(resPath.includes(".module.")),
             localIdentName: isDev ? "[path][name]__[local]" : "[hash:base64:8]",
           },
-        }, 
+        },
       },
       "sass-loader",
     ],
@@ -26,5 +32,18 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     exclude: /node_modules/, // исключаем папку
   };
 
-  return [typescriptLoader, sassLoader]; // конф лоадеров, обработка других файлов кроме js-ts
+  const fileLoader = {
+    test: /\.(png|jpg|gif)$/i,
+    use: [
+      {
+        loader: "url-loader",
+        options: {
+          limit: 8192,
+        },
+      },
+    ],
+    type: "javascript/auto",
+  };
+
+  return [typescriptLoader, sassLoader, svgLoader, fileLoader]; // конф лоадеров, обработка других файлов кроме js-ts
 }

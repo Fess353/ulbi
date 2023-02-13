@@ -1,0 +1,11 @@
+.button {
+    position: relative;
+    color: var(--primary-color);
+
+    &_clear {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        padding: 0;
+    }
+}

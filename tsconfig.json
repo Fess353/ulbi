@@ -8,7 +8,11 @@
     "allowJs": true, // позволяет компилятору обрабатывать js файлы
     "moduleResolution": "node", //
     "esModuleInterop": true, // импорт из пакетов common.js
-    "allowSyntheticDefaultImports": true // использование привычных импортов-экспортов вместо '* as'
+    "allowSyntheticDefaultImports": true, // использование привычных импортов-экспортов вместо '* as'
+    "paths": {
+      "*":["./src/*"] //меняем импорты на абсолютные
+    },
+    "baseUrl": ".",
   },
   "ts-node": {
     "compilerOptions": {
