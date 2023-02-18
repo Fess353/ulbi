@@ -2,6 +2,7 @@ import webpack from "webpack";
 import HTMLWebpackPlugin from "html-webpack-plugin";
 import { BuildOptions } from "./types/config";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 
 // возвращаем массив плагинов
