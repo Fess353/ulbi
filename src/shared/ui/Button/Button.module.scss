@@ -1,11 +1,19 @@
 .button {
     position: relative;
     color: var(--primary-color);
+    outline: none;
+    font-family: var(--font-family-main);
+    cursor: pointer;
 
     &_clear {
         background-color: transparent;
         border: none;
-        outline: none;
         padding: 0;
+    }
+
+    &_outlined {
+        padding: 10px 15px;
+        background-color: transparent;
+        border: 1px solid var(--primary-color);
     }
 }

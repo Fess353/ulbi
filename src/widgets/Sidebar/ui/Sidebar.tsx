@@ -1,7 +1,7 @@
 import { LangSwitcher } from 'features/LangSwitcher';
 import { ThemeSwitcher } from 'features/ThemeSwitcher';
 import { useState } from 'react';
-import { cn } from 'shared/libs/classNames';
+import { cn } from 'shared/libs/classNames/classNames';
 import { Button } from 'shared/ui/Button/Button';
 import css from './Sidebar.module.scss';
 
@@ -19,9 +19,17 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
 	}
 
 	return (
-		<div className={cn(css.sidebar, {[css.sidebar_opened] : open}, [className])}>
+		<div
+			data-testid='sidebar'
+			className={cn(css.sidebar, { [css.sidebar_opened]: open }, [className])}>
 			<div className="sidebar__toggler">
-				<Button onClick={onToggle}>Tgl</Button>
+				<Button
+					data-testid='sidebar-toggle'
+					onClick={onToggle}
+				// eslint-disable-next-line i18next/no-literal-string
+				>
+					Toggle
+				</Button>
 			</div>
 			<div className="sidebar__swticher">
 				<ThemeSwitcher />
@@ -30,5 +38,5 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
 				<LangSwitcher />
 			</div>
 		</div>
- );
+	);
 }

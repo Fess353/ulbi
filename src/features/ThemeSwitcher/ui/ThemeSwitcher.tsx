@@ -1,5 +1,5 @@
 import { useTheme } from 'app/providers/ThemeProvider';
-import { cn } from 'shared/libs/classNames';
+import { cn } from 'shared/libs/classNames/classNames';
 import css from './ThemeSwitcher.module.scss';
 import DayIcon from 'shared/assets/icons/sun.svg';
 import NightIcon from 'shared/assets/icons/moon.svg';

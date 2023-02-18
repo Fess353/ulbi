@@ -1,5 +1,5 @@
 import { Link, LinkProps } from 'react-router-dom';
-import { cn } from 'shared/libs/classNames';
+import { cn } from 'shared/libs/classNames/classNames';
 import css from './AppLink.module.scss';
 
 interface AppLinkProps extends LinkProps {

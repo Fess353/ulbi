@@ -1,7 +1,7 @@
 
 import 'app/styles/index.scss';
 import { useTheme } from './providers/ThemeProvider/lib/useTheme';
-import { cn } from 'shared/libs/classNames';
+import { cn } from 'shared/libs/classNames/classNames';
 import { AppRouter } from './providers/router';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';

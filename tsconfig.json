@@ -10,13 +10,19 @@
     "esModuleInterop": true, // импорт из пакетов common.js
     "allowSyntheticDefaultImports": true, // использование привычных импортов-экспортов вместо '* as'
     "paths": {
-      "*":["./src/*"] //меняем импорты на абсолютные
+      "*": ["./src/*"] //меняем импорты на абсолютные
     },
     "baseUrl": ".",
+    "strictBindCallApply": true, //подсветка пропсов компонента в сторис
   },
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+  "include": [
+    "./config/jest/setupTests.ts",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+  ]
 }

@@ -2,7 +2,7 @@ import webpack from "webpack";
 import HTMLWebpackPlugin from "html-webpack-plugin";
 import { BuildOptions } from "./types/config";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
+import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 
 // возвращаем массив плагинов
 export function buildPlugins({
@@ -21,7 +21,9 @@ export function buildPlugins({
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
     }),
-    isDev && new ReactRefreshWebpackPlugin(), // хот модуль реплейсмент в дев
     new webpack.HotModuleReplacementPlugin(),
+    // new BundleAnalyzerPlugin({
+      // openAnalyzer: false,
+    // })
   ].filter(Boolean);
 }
