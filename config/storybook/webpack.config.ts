@@ -5,8 +5,6 @@ import webpack from "webpack";
 import { buildCssLoaders } from "../../config/build/loaders/buildCssLoader";
 import { buildSvgLoaders } from "../../config/build/loaders/buildSvgLoader";
 
-// [ВОПРОС] : Объясни, пожалуйста, вот эту конструкцию ({ config }: { config: webpack.Configuration }). Почему не работает вот так ({ config: webpack.Configuration }) ?
-
 export default ({ config }: { config: webpack.Configuration }) => {
   const paths: BuildPaths = {
     build: "",
