@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, ThemeButton } from "./Button";
+import { Button, ButtonSize, ButtonVariant } from "./Button";
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
@@ -18,13 +18,48 @@ PrimaryButton.args = {
 export const ClearButton = Template.bind({});
 ClearButton.args = {
 	children: 'Button Clear',
-	theme: ThemeButton.CLEAR
+	variant: ButtonVariant.CLEAR
 }
 
 export const OutlinedButton = Template.bind({});
 OutlinedButton.args = {
 	children: 'Button Outlined',
-	theme: ThemeButton.OUTLINED
+	variant: ButtonVariant.OUTLINED
+}
+
+export const BcgButton = Template.bind({});
+BcgButton.args = {
+	children: 'Button Bcg',
+	variant: ButtonVariant.BCG
+}
+export const SquareButton = Template.bind({});
+SquareButton.args = {
+	children: '>',
+	variant: ButtonVariant.BCG,
+	square: true
+}
+export const BcgButtonSmall = Template.bind({});
+BcgButtonSmall.args = {
+	children: 'Button Bcg Small',
+	variant: ButtonVariant.BCG,
+	size: ButtonSize.S
+}
+export const BcgButtonMiddle = Template.bind({});
+BcgButtonMiddle.args = {
+	children: 'Button Bcg Middle',
+	variant: ButtonVariant.BCG,
+	size: ButtonSize.M
+}
+export const BcgButtonLarge = Template.bind({});
+BcgButtonLarge.args = {
+	children: 'Button Bcg Large',
+	variant: ButtonVariant.BCG,
+	size: ButtonSize.L
+}
+export const BcgInvertedButton = Template.bind({});
+BcgInvertedButton.args = {
+	children: 'Button InvertedBcg',
+	variant: ButtonVariant.BCG_INV
 }
 
 export const PrimaryButtonDark = Template.bind({});
@@ -36,7 +71,7 @@ PrimaryButtonDark.decorators = [ThemeDecorator(Theme.DARK)];
 export const ClearButtonDark = Template.bind({});
 ClearButtonDark.args = {
 	children: 'Button Clear',
-	theme: ThemeButton.CLEAR
+	variant: ButtonVariant.CLEAR
 }
 ClearButtonDark.decorators = [ThemeDecorator(Theme.DARK)];
 
@@ -44,6 +79,6 @@ ClearButtonDark.decorators = [ThemeDecorator(Theme.DARK)];
 export const OutlinedButtonDark = Template.bind({});
 OutlinedButtonDark.args = {
 	children: 'Button Outlined',
-	theme: ThemeButton.OUTLINED
+	variant: ButtonVariant.OUTLINED
 }
 OutlinedButtonDark.decorators = [ThemeDecorator(Theme.DARK)];

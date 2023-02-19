@@ -1,4 +1,6 @@
 .sidebar {
+    padding: 20px 10px;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,5 +12,61 @@
 
     &_opened {
         width: 200px;
+    }
+
+    &__toggler {
+        position: absolute;
+        bottom: 20px;
+        right: 0;
+        transform: translateX(100%);
+    }
+
+    &__themeSwitcher {
+        background-color: red;
+        margin-top: auto;
+    }
+    
+    &__langSwitcher {
+        margin-top: 20px;
+    }
+
+    &__links {
+        width: 100%;
+        color: red;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    &__link {
+        color: white;
+        flex-wrap: nowrap;
+    }
+
+    &__linkText {
+        transition: opacity 300ms ease-in-out;
+
+        &.hidden {
+            opacity: 0;
+            width: 0;
+        }
+    }
+
+    &__linkIcon {
+        margin-right: 10px;
+        position: relative;
+        width: 30px;
+        height: 30px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            width: 100%;
+            height: 100%;
+            fill: var(--primary-color);
+        }
     }
 }

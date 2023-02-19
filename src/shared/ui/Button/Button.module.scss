@@ -1,9 +1,14 @@
 .button {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
     color: var(--primary-color);
     outline: none;
     font-family: var(--font-family-main);
     cursor: pointer;
+    box-sizing: border-box;
 
     &_clear {
         background-color: transparent;
@@ -12,8 +17,40 @@
     }
 
     &_outlined {
-        padding: 10px 15px;
         background-color: transparent;
         border: 1px solid var(--primary-color);
+    }
+
+    &_bcg {
+        background-color: var(--bg-color);
+        color: var(--primary-color);
+    }
+
+    &_bcgInverted {
+        background-color: var(--inverted-bg-color);
+        color: var(--inverted-primary-color);
+    }
+
+    &_square {
+        padding: 0;
+        width: 40px;
+        height: 40px;
+    }
+
+    &_small {
+        padding: 4px 12px;
+        font-size: var(--font-size-s);
+    }
+
+    &_middle {
+        padding: 6px 16px;
+        font-size: var(--font-size-m);
+
+    }
+
+    &_large {
+        padding: 8px 20px;
+        font-size: var(--font-size-l);
+
     }
 }

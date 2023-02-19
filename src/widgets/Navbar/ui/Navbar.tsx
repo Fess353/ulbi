@@ -15,14 +15,6 @@ export const Navbar = ({ className }: NavbarProps) => {
 
 	return (
 		<nav className={cn(css.navbar, {}, [className])}>
-			<ul className={css.navbar__links}>
-				<li className={css.navbar__link}>
-					<AppLink to={RoutePath.main} className={css.navbar__link}>{t('Главная')}</AppLink>
-				</li>
-				<li className={css.navbar__link}>
-					<AppLink to={RoutePath.about} className={css.navbar__link}>{t('О нас')}</AppLink>
-				</li>
-			</ul>
 		</nav>
 	);
 };
